@@ -136,7 +136,7 @@ class Users extends Model {
 
 /////////////////////////////////////
 
-    public function insertuser($table,$uye_adi,$uye_tel,$uye_sehir,$uye_unvan,$uye_uzmanlik,$uye_mail,$uye_sifre)
+    /*public function insertuser($table,$uye_adi,$uye_tel,$uye_sehir,$uye_unvan,$uye_uzmanlik,$uye_mail,$uye_sifre)
     {	
 
         $db_sorgu = $this->db->prepare("INSERT INTO uye SET uye_adi = ?, uye_tel = ?, uye_sehir = ?, uye_unvan = ?, uye_uzmanlik = ?, uye_mail = ?, uye_sifre = ?, uye_yetki = ?, uye_kod=? ");
@@ -153,6 +153,39 @@ class Users extends Model {
             
         }
     }    
+
+
+    public function deneme($table,$html){
+
+        $db_sorgu = $this->db->prepare("INSERT INTO deneme SET deneme=?");
+        $db_result = $db_sorgu->execute([$html]);
+        
+        if(isset($db_result)){
+
+            return $db_result;
+
+        }
+        else{
+
+            return NULL;
+            
+        }
+
+
+    }
+
+
+
+    public function denemeselect(){
+
+        return $this->db->query("SELECT * FROM deneme")->fetch();
+        
+        
+      
+
+
+    }
+*/
     
 }
 
