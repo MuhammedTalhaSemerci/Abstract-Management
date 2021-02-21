@@ -37,15 +37,15 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
-              Site düzenleme
+              Bildiri İşlemleri
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./index.php?sayfa=anasayfa_resim&islem=index" class="nav-link">
+                <a href="./abstract_index?sayfa=abstract_upload&islem=index" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Ana Sayfa Resmi Ekle</p>
+                  <p>Bildiri Yükle</p>
                 </a>
               </li>
               <li class="nav-item">

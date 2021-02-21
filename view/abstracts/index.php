@@ -1,73 +1,6 @@
 
 
 
-<?php
-
-session_start();
-$k_adi = "antahed";
-$k_sifre = "antahed+12";
-
-
-if($_POST["admin_gonder"]){
-
-$giris_kadi = $_POST["giris_kadi"];
-$giris_sifre = $_POST{"giris_sifre"};
-
-
-        if($k_adi == $giris_kadi && $k_sifre == $giris_sifre){
-
-
-            $admin_user = array( "k_adi" => $giris_kadi , "k_sifre" => $giris_sifre);
-
-            $_SESSION['admin_user'] = $admin_user;
-
-           
-
-
-        }
-
-        else{
-
-            header("location:./admin_giris.php");
-            
-        }
-
-}
-
-
-
-else{
-
-    if($_SESSION["admin_user"]["k_adi"] == $k_adi && $_SESSION["admin_user"]["k_sifre"] == $k_sifre){
-
-        
-       
-
-    }
-else{
-
-
-    header("location:./admin_giris.php");
-    
-}
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,8 +15,10 @@ else{
   <!-- IonIcons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="view/abstracts/dist/css/adminlte.min.css">
 </head>
+
+
 <!--
 `body` tag options:
 
@@ -116,10 +51,10 @@ else{
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <aside class="main-sidebar sidebar-dark-primary elevation-4" >
     <!-- Brand Logo -->
     <a href="index.php" class="brand-link">
-      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="view/abstracts/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Admin Page</span>
     </a>
 
@@ -141,7 +76,7 @@ else{
 
       <!-- Sidebar Menu -->
    <?php
-   include("menu.php");
+   include(__DIR__."/menu.php");
    ?>
       <!-- /.sidebar-menu -->
     </div>
@@ -149,13 +84,7 @@ else{
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper" style="style=
-    margin-left:auto;
-    margin-right:auto;
-    display:inline-block;
-    width:100%;
-
-    ">
+  <div class="content-wrapper" >
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
@@ -175,10 +104,10 @@ else{
     <!-- /.content-header -->
 
     <!-- Main content -->
-    <div class="content" >
+    <div class="content"  >
       <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-6 col-6">
+          <div class="col-lg-12 col-12">
             <div class="card" >
            
             <!-- /.card -->
@@ -192,23 +121,23 @@ else{
 
 if($_GET["sayfa"] == "yorumlar"){
 
-    include("./yorumlar.php");
+    include(__DIR__."/yorumlar.php");
 
 }
 
 
 if($_GET["sayfa"] == "admin_uye_islem"){
 
-    include("./admin_uye_islem.php");
+    include(__DIR__."/admin_uye_islem.php");
 
 }
 
 
 
 
-if($_GET["sayfa"] == "anasayfa_resim"){
+if($_GET["sayfa"] == "abstract_upload"){
 
-    include("./anasayfa_resim.php");
+    include(__DIR__."/abstract_upload.php");
 
 }
 
@@ -216,20 +145,20 @@ if($_GET["sayfa"] == "anasayfa_resim"){
 
 if($_GET["sayfa"] == "program_akisi"){
 
-    include("./program_akisi.php");
+    include(__DIR__."/program_akisi.php");
 
 }
 
 if($_GET["sayfa"] == "eski_yayinlar"){
 
-    include("./admin_eski_yayin.php");
+    include(__DIR__."/admin_eski_yayin.php");
 
 }
 
 
 if($_GET["sayfa"] == "wowza_link"){
 
-    include("./admin_wowza.php");
+    include(__DIR__."/admin_wowza.php");
 
 }
 
@@ -258,18 +187,19 @@ if($_GET["sayfa"] == "wowza_link"){
 
 <!-- REQUIRED SCRIPTS -->
 
+
 <!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <!-- Bootstrap -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="view/abstracts/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE -->
-<script src="dist/js/adminlte.js"></script>
+<script src="view/abstracts/dist/js/adminlte.js"></script>
 
 <!-- OPTIONAL SCRIPTS -->
-<script src="plugins/chart.js/Chart.min.js"></script>
+<script src="view/abstracts/plugins/chart.js/Chart.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
+<script src="view/abstracts/dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard3.js"></script>
+<script src="view/abstract/dist/js/pages/dashboard3.js"></script>
 </body>
 </html>

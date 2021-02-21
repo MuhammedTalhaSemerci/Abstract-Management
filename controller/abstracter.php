@@ -1,7 +1,15 @@
 <?php
 
 
-class bildiri extends Controller {
+class abstracter extends Controller {
+
+    public function index()
+    {
+
+        $model = $this->model("model_abstract");
+        $abstract_websites = $model->allcategorywebsites();
+        $this->view("abstracts/index",["abstract_websites"=>$abstract_websites]);
+    }
 
     public function new_abstract(){
         $this->view("new_abstract",[]);
@@ -10,7 +18,6 @@ class bildiri extends Controller {
     public function change_abstract(){
         $this->view("change_abstract",[]);
     }
-
     public function save()
     {
         if(isset($_POST["abstract_upload"]))
@@ -27,14 +34,21 @@ class bildiri extends Controller {
             $keywords           = $_POST["keywords"];
             $comments           = $_POST["comments"];
 
-            $mmodel = $this->model("bildiri");
+            $model = $this->model("model_abstract");
             $bildiri_sorgu = $model->abstract_save($register_id,$abstract_site,$abstract_category,$main_author,$other_author,$alt_contact,$abstract_type,$title,$contant,$keywords,$comments);
+            
 
-            if($bildiri_sorgu){
+            if($bildiri_sorgu ){
 
-
+                echo 1;
 
             }
+            else{
+                echo 0;
+            }
+        }
+        else{
+            echo 0;
         }
     }
 
@@ -76,4 +90,5 @@ class bildiri extends Controller {
             }
         }
     }
+  
 }
